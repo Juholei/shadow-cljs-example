@@ -1,0 +1,15 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ [[reagent "0.10.0"]]
+ :dev-http {8080 "public"}
+ :builds {:app {:target :browser
+                :modules {:main {:init-fn hello-world.core/init}}}
+          :browser-test {:target :browser-test
+                         :test-dir "target/test"
+                         :devtools  {:http-port 8021
+                                     :http-root  "target/test"}}}}
