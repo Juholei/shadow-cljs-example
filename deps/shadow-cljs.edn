@@ -1,0 +1,9 @@
+;; shadow-cljs configuration
+{:deps true
+ :dev-http {3001 "public"}
+ :builds {:app {:target :browser
+                :modules {:main {:init-fn hello-world.core/init}}}
+          :browser-test {:target :browser-test
+                         :test-dir "target/test"
+                         :devtools  {:http-port 8021
+                                     :http-root  "target/test"}}}}
